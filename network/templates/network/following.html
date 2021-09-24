@@ -1,0 +1,30 @@
+{% extends "network/layout.html" %}
+
+{% block script %}
+    {% if following %}
+        <script src="../static/network/posts.js"></script>
+    {% else %}
+        <script src="static/network/posts.js"></script>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <h1 class="title">All post</h1>
+    <div class="container">
+        <form action="{% url 'add_post' %}" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <h4 class="new_post">New Post</h4>
+                <textarea name="post" class="form-control add_post_text" rows="3"></textarea>
+                <button class="btn btn-primary post_button">Post</button>
+            </div>
+        </form>
+        <div id="posts">
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination" id="pagination"></ul>
+        </nav>
+    </div>
+
+    
+{% endblock %}

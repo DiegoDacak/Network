@@ -1,0 +1,32 @@
+{% extends "network/layout.html" %}
+
+{% block script %}
+    <script src="../static/network/posts.js"></script>
+    <script>localStorage.setItem('user','{{ user.username }}')</script>
+{% endblock %}
+
+{% block body %}
+    <h1 class="title">Profile of {{ profile.username }}</h1>
+    <div class="flex_div">
+        <h6 class="profile_detail">Followers: {{ followers }}</h6>
+        <h6 class="profile_detail">Following: {{ following }}</h6>
+    </div>
+    {% if user.is_authenticated %}
+        {% if not user.username == profile.username %}
+            {% if follow %}    
+                <a class="btn btn-primary profile_button" href="{% url 'delete_follower' profile.username %}">Unfollow</a>
+            {% else %}
+            <a class="btn btn-primary profile_button" href="{% url 'add_follower' profile.username %}">Follow</a>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+    <h1 class="title">Posts</h1>
+    <div class="container">
+        <div id="posts">
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination" id="pagination"></ul>
+        </nav>
+    </div>
+
+{% endblock %}

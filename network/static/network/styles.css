@@ -1,0 +1,92 @@
+.title {
+    margin-left: 1rem;
+}
+.row {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+.add_post_text {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.new_post {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.post_button {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.edit,.text,.date,.comment,.heart_like,.heart_unlike {
+    margin-left: 1rem;
+}
+
+.date,.comment,.number_like {
+    color: gray;
+}
+
+.comment {
+    margin-bottom: 1rem;
+}
+
+.heart_like {
+    color: red;
+    cursor: pointer;
+}
+
+.heart_unlike {
+    color: gray;
+    cursor: pointer
+}
+
+.number_like {
+    margin-left: 0.3rem;
+}
+
+.flex_div {
+    display: flex;
+}
+
+.page-item.page-link {
+    cursor: pointer;
+}
+
+
+.profile_detail {
+    margin-left: 1rem;
+    color: gray;
+}
+
+
+.profile_button {
+    margin-left: 1rem;
+    color: white;
+}
+
+
+.edit {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.div_100 {
+    width: 100%;
+    padding: 1rem;
+}
+
+.edit_button {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.heart_margin {
+    margin-left: 1rem;
+}

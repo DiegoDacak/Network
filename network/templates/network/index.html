@@ -1,0 +1,29 @@
+{% extends "network/layout.html" %}
+
+{% block script %}
+    <script>localStorage.setItem('user','{{ user.username }}')</script>
+    <script src="static/network/posts.js"></script>
+{% endblock %}
+
+{% block body %}
+    <h1 class="title">All post</h1>
+    <div class="container">
+        {% if user.username %}
+            <form action="{% url 'add_post' %}" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <h4 class="new_post">New Post</h4>
+                    <textarea name="post" class="form-control add_post_text" rows="3"></textarea>
+                    <button class="btn btn-primary post_button">Post</button>
+                </div>
+            </form>
+        {% endif %}
+        <div id="posts">
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination" id="pagination"></ul>
+        </nav>
+    </div>
+    
+{% endblock %}
+
